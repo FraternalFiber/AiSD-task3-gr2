@@ -6,7 +6,10 @@ sys.setrecursionlimit(5000)
 
 
 def kahn_sort(graph):
-    """Algorytm Kahna - usuwanie wierzchołków o stopniu wejściowym 0."""
+    """Algorytm Kahna - usuwanie wierzchołków niezależnych (o stopniu wejściowym 0)
+    :param graph: graf do posortowania
+    :return: posortowany graf
+    """
     in_degree = [graph.get_in_degree(i) for i in range(graph.v)]
     queue = collections.deque([i for i, d in enumerate(in_degree) if d == 0])
     result = []
@@ -20,13 +23,13 @@ def kahn_sort(graph):
                 queue.append(v)
 
     if len(result) != graph.v:
-        return None  # Cykl wykryty
+        return None  # Cykl wykryty (nie ma więcej wierzchołków niezależnych a pozostały jeszcze wierzchołki nieusunięte)
     return result
 
 
 def tarjan_sort(graph, start_node=None):
-    """Algorytm Tarjana - DFS z wykrywaniem cykli."""
-    visited = [0] * graph.v  # 0: biały, 1: szary (w trakcie), 2: czarny (odwiedzony)
+    """Algorytm Tarjana - DFS z wykrywaniem cykli"""
+    visited = [0] * graph.v  # 0: biały, 1: szary, 2: czarny
     stack = []
     has_cycle = False
 
@@ -46,11 +49,11 @@ def tarjan_sort(graph, start_node=None):
         visited[u] = 2
         stack.append(u + 1)
 
-    # Opcjonalny start z konkretnego wierzchołka (wymaganie projektowe)
+    # Opcjonalny start z konkretnego wierzchołka
     if start_node is not None and 1 <= start_node <= graph.v:
         visit(start_node - 1)
 
-    # Odwiedzenie pozostałych (standardowa procedura)
+    # Odwiedzenie pozostałych wierzchołków
     for i in range(graph.v):
         if visited[i] == 0:
             visit(i)

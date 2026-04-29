@@ -1,5 +1,5 @@
 def load_graph(filename):
-    """Wczytuje graf z pliku tekstowego."""
+    """Wczytuje graf z pliku tekstowego"""
     try:
         with open(filename, 'r') as f:
             lines = f.readlines()

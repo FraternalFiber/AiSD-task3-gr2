@@ -20,10 +20,11 @@ if __name__ == "__main__":
             data = load_graph(path)
             if data:
                 v, edges = data
-                g = GraphPredecessors(v)
-                for u, e_v in edges: g.add_edge(u, e_v)
+                print(v)
+                graph = GraphPredecessors(v)
+                for u, e_v in edges: graph.add_edge(u, e_v)
 
-                kahn_sorted = kahn_sort(g)
+                kahn_sorted = kahn_sort(graph)
 
                 if kahn_sorted:
                     print("Wynik Kahn:", kahn_sorted)
@@ -34,10 +35,10 @@ if __name__ == "__main__":
                 start_v = input("Wierzchołek startowy dla Tarjana (Enter = domyślny): ")
                 sv = int(start_v) if start_v.isdigit() else None
 
-                tarjan_sorted = tarjan_sort(g)
+                tarjan_sorted = tarjan_sort(graph)
 
                 if tarjan_sorted:
-                    print("Wynik Tarjan:", tarjan_sort(g, sv))
+                    print("Wynik Tarjan:", tarjan_sort(graph, sv))
                 else:
                     print("Wykryto cykl! Graf nie może zostać posortowany.")
 
