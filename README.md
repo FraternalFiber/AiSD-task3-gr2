@@ -218,7 +218,7 @@
 
 
 ## Porównanie reprezentacji grafów
-| Reprezentacja          | Zalety                                                                                                                 | Wady                                                                                                                       |
-|:-----------------------|:-----------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------|
-| **Macierz Incydencji** | Łatwa identyfikacja końców krawędzi; dobra do multigrafów (wielokrotne połączenia).                                    | Skrajnie nieefektywna pamięciowo ($O(V \cdot E)$), wyszukiwanie sąsiadów trwa $O(E)$, co drastycznie spowalnia sortowanie. |
-| **Lista Poprzedników** | Oszczędność pamięci ($O(V+E)$), natychmiastowy dostęp do stopnia wejściowego (Kahn) i szybkie przeszukiwanie sąsiadów. | Bardziej złożona implementacja, wolniejsze sprawdzanie istnienia konkretnej krawędzi.                                      |
+| Reprezentacja          | Zalety                                                                                                               | Wady                                                                                                               |
+|:-----------------------|:---------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------|
+| **Macierz Incydencji** | Łatwa identyfikacja końców krawędzi; dobra do multigrafów (wielokrotne połączenia).                                  | Skrajnie nieefektywna pamięciowo (O(V * E)), wyszukiwanie sąsiadów trwa O(E), co drastycznie spowalnia sortowanie. |
+| **Lista Poprzedników** | Oszczędność pamięci (O(V+E)), natychmiastowy dostęp do stopnia wejściowego (Kahn) i szybkie przeszukiwanie sąsiadów. | Bardziej złożona implementacja, wolniejsze sprawdzanie istnienia konkretnej krawędzi.                              |
