@@ -211,10 +211,10 @@
 ---
 
 # Wykresy
-![Wykres - macierz incydencji](/plot_linear_matrix.png)
-![Wykres - lista poprzedników](/plot_linear_predecessors.png)
-![Wykres - algorytm Kahna](/plot_log_kahn.png)
-![Wykres - algorytm Tarjana](/plot_log_tarjan.png)
+![Wykres - macierz incydencji](/Plots/plot_linear_matrix.png)
+![Wykres - lista poprzedników](/Plots/plot_linear_predecessors.png)
+![Wykres - algorytm Kahna](/Plots/plot_log_kahn.png)
+![Wykres - algorytm Tarjana](/Plots/plot_log_tarjan.png)
 
 
 ## Porównanie reprezentacji grafów
