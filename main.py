@@ -20,7 +20,6 @@ if __name__ == "__main__":
             data = load_graph(path)
             if data:
                 v, edges = data
-                print(v)
                 graph = GraphPredecessors(v)
                 for u, e_v in edges: graph.add_edge(u, e_v)
 
