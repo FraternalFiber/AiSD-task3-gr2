@@ -1,7 +1,7 @@
 import numpy as np
 
 class GraphMatrix:
-    """Reprezentacja grafu za pomocą macierzy incydencji."""
+    """Reprezentacja grafu za pomocą macierzy incydencji"""
     def __init__(self, num_vertices):
         self.v = num_vertices
         self.edges_list = []  # Lista krawędzi (u, v)
@@ -33,7 +33,7 @@ class GraphMatrix:
         return np.count_nonzero(self.matrix[v_idx] == 1)
 
 class GraphPredecessors:
-    """Reprezentacja grafu za pomocą listy poprzedników."""
+    """Reprezentacja grafu za pomocą listy poprzedników"""
     def __init__(self, num_vertices):
         self.v = num_vertices
         self.predecessors = {i: [] for i in range(num_vertices)}

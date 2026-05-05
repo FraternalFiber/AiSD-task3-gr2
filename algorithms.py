@@ -28,7 +28,11 @@ def kahn_sort(graph):
 
 
 def tarjan_sort(graph, start_node=None):
-    """Algorytm Tarjana - DFS z wykrywaniem cykli"""
+    """Algorytm Tarjana - DFS z wykrywaniem cykli
+    :param graph: graf do posortowania
+    :param start_node: opcjonalnie wierzchołek do wystartowania
+    :return: posortowany graf
+    """
     visited = [0] * graph.v  # 0: biały, 1: szary, 2: czarny
     stack = []
     has_cycle = False
